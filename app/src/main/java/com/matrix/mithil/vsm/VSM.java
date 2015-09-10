@@ -111,7 +111,9 @@ public class VSM extends TabActivity {
                 dsRate=10;
                 rssRate=10;
                 ssRate=10;
-                break;
+                TextView round = (TextView) findViewById(R.id.round_textView);
+                round.setText("Auction Round");
+                return;
             case 1:
                 arvind.setRate(25);
                 deepika.setRate(90);
@@ -123,7 +125,8 @@ public class VSM extends TabActivity {
                 rohit.setRate(40);
                 salman.setRate(35);
                 break;
-            default: round--;
+            default:
+                this.round--;
                 Toast.makeText(getApplicationContext(), "Event ends", Toast.LENGTH_SHORT).show();
                 break;
         }
