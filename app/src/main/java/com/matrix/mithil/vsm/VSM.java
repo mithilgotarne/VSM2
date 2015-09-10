@@ -2,6 +2,7 @@ package com.matrix.mithil.vsm;
 
 import android.app.TabActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -128,6 +129,8 @@ public class VSM extends TabActivity {
             default:
                 this.round--;
                 Toast.makeText(getApplicationContext(), "Event ends", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getBaseContext(), startup.class);
+                startActivity(i);
                 break;
         }
 
