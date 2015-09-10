@@ -5,6 +5,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 /**
  * Created by Mithil on 8/23/2015.
  */
@@ -81,8 +83,16 @@ public class Share extends VSM {
     public void setRate(int rate){
         this.rate=rate;
         credits=rate*shares;
+
+    }
+
+    public void displayNewRate() {
         r.setText("Rate: "+rate);
         c.setText("Worth Credits: "+credits);
+    }
+
+    public void setRate() {
+        setRate(new Random().nextInt(101));
     }
 
 }

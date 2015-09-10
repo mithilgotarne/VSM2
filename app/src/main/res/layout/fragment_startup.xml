@@ -5,40 +5,41 @@
     >
 
     <ImageView
+        android:id="@+id/splash_imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/splash_imageView"
-        android:src="@drawable/splash"
+        android:alpha="0.7"
         android:scaleType="centerCrop"
-        android:alpha="0.7" />
+        android:src="@drawable/splash" />
     <EditText
+        android:id="@+id/startupPasscode_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="6"
+        android:layout_centerHorizontal="true"
 
-        android:textSize="32sp"
-        android:hint="Enter Passcode"
-        android:textColorHint="#B0BEC5"
-        android:gravity="center"
-        android:textColor="#E6E6E6"
-        android:id="@+id/startupPasscode_editText"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:ems="6"
+        android:gravity="center"
+        android:hint="Enter Passcode"
+        android:inputType="numberDecimal"
+        android:textColor="#E6E6E6"
+        android:textColorHint="#B0BEC5"
+        android:textSize="32sp" />
 
     <Button
+        android:id="@+id/submit_button"
+        style="@style/Widget.AppCompat.Light.ActionButton"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:background="#1A237E"
-        android:text="Submit"
-        android:fontFamily="sans-serif"
-        android:id="@+id/submit_button"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="32sp"
-        android:alpha="1"
         android:layout_below="@+id/startupPasscode_editText"
         android:layout_centerHorizontal="true"
-        style="@style/Widget.AppCompat.Light.ActionButton" />
+        android:alpha="1"
+        android:background="#1A237E"
+        android:fontFamily="sans-serif"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

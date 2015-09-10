@@ -7,16 +7,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="#212121"
+        android:orientation="horizontal"
         android:padding="8dp">
 
 
         <TextView
             android:id="@+id/VSM_textView"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/title_activity_vsm"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#ffffff"
@@ -26,8 +26,8 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next Round"
-            android:onClick="transact"/>
+            android:onClick="transact"
+            android:text="Next Round" />
 
     </LinearLayout>
 
@@ -160,8 +160,8 @@
                                             android:background="#ffffff"
                                             android:ems="10"
                                             android:hint="Sell/Buy"
-                                            android:maxLength="4"
                                             android:inputType="numberDecimal"
+                                            android:maxLength="4"
                                             android:padding="8dp"
                                             android:textAlignment="center" />
 
@@ -170,16 +170,16 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:text="Sell"
-                                            android:onClick="sell"/>
+                                            android:onClick="sell"
+                                            android:text="Sell" />
 
                                         <Button
                                             android:id="@+id/arvindBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:text="Buy"
-                                            android:onClick="buy"/>
+                                            android:onClick="buy"
+                                            android:text="Buy" />
                                     </LinearLayout>
 
 
@@ -248,8 +248,8 @@
                                             android:background="#ffffff"
                                             android:ems="10"
                                             android:hint="Sell/Buy"
-                                            android:maxLength="4"
                                             android:inputType="numberDecimal"
+                                            android:maxLength="4"
                                             android:padding="8dp"
                                             android:textAlignment="center" />
 
@@ -259,16 +259,16 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
 
-                                            android:text="Sell"
-                                            android:onClick="sell"/>
+                                            android:onClick="sell"
+                                            android:text="Sell" />
 
                                         <Button
                                             android:id="@+id/deepikaBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:text="Buy"
-                                            android:onClick="buy"/>
+                                            android:onClick="buy"
+                                            android:text="Buy" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -334,8 +334,8 @@
                                             android:background="#ffffff"
                                             android:ems="10"
                                             android:hint="Sell/Buy"
-                                            android:maxLength="4"
                                             android:inputType="numberDecimal"
+                                            android:maxLength="4"
                                             android:padding="8dp"
                                             android:textAlignment="center" />
 
@@ -345,16 +345,16 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
 
-                                            android:text="Sell"
-                                            android:onClick="sell"/>
+                                            android:onClick="sell"
+                                            android:text="Sell" />
 
                                         <Button
                                             android:id="@+id/rohitBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:text="Buy"
-                                            android:onClick="buy"/>
+                                            android:onClick="buy"
+                                            android:text="Buy" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -420,8 +420,8 @@
                                             android:background="#ffffff"
                                             android:ems="10"
                                             android:hint="Sell/Buy"
-                                            android:maxLength="4"
                                             android:inputType="numberDecimal"
+                                            android:maxLength="4"
                                             android:padding="8dp"
                                             android:textAlignment="center" />
 
@@ -431,8 +431,8 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
 
-                                            android:text="Sell"
-                                            android:onClick="sell"/>
+                                            android:onClick="sell"
+                                            android:text="Sell" />
 
                                         <Button
                                             android:id="@+id/salmanBuy_button"
@@ -440,8 +440,8 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
 
-                                            android:text="Buy"
-                                            android:onClick="buy"/>
+                                            android:onClick="buy"
+                                            android:text="Buy" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -458,9 +458,9 @@
                     android:layout_height="match_parent">
 
                     <ListView
-                        android:id="@+id/list"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:id="@+id/roundList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                     </ListView>
                 </LinearLayout>

@@ -11,4 +11,9 @@ public class startup extends AppCompatActivity {
         setContentView(R.layout.activity_startup);
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
 }

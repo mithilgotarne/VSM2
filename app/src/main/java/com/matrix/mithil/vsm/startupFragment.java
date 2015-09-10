@@ -50,4 +50,5 @@ public class startupFragment extends Fragment {
         else
             Toast.makeText(getContext(),"Sorry! Wrong passcode.",Toast.LENGTH_SHORT).show();
     }
+
 }
