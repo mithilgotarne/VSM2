@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.matrix.mithil.vsm.startupFragment"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/splash_imageView"
+        android:src="@drawable/splash"
+        android:scaleType="centerCrop"
+        android:alpha="0.7" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="6"
+
+        android:textSize="32sp"
+        android:hint="Enter Passcode"
+        android:textColorHint="#B0BEC5"
+        android:gravity="center"
+        android:textColor="#E6E6E6"
+        android:id="@+id/startupPasscode_editText"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="#1A237E"
+        android:text="Submit"
+        android:fontFamily="sans-serif"
+        android:id="@+id/submit_button"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:alpha="1"
+        android:layout_below="@+id/startupPasscode_editText"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.Light.ActionButton" />
+</RelativeLayout>
