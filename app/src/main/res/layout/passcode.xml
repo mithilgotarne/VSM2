@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_root"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    style="@style/Theme.AppCompat.Light.Dialog.Alert"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp">
 
@@ -15,6 +16,7 @@
         android:gravity="center"
         android:hint="Enter Passcode"
         android:inputType="numberDecimal"
+        android:maxLength="4"
         android:textColorHint="#B0BEC5"
         android:textSize="24sp" />
 

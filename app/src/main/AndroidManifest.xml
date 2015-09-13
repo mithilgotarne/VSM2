@@ -18,10 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".startup"
-            android:label="@string/title_activity_vsm" >
-        </activity>
-        <activity
             android:name=".VSM"
             android:label="@string/title_activity_vsm" >
         </activity>
