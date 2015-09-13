@@ -5,16 +5,39 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_startup">Login</string>
     <string name="title_activity_vsm">Virtual Stock Market</string>
+
     <string name="arvind">Arvind Kejriwal</string>
     <string name="deepika">Deepika Padukone</string>
     <string name="rohit">Rohit Sharma</string>
     <string name="salman">Salman Khan</string>
-    <string name="ronaldo">Cristiano Ronaldo</string>
     <string name="novak">Novak Djokovic</string>
+    <string name="rooney">Wayne Rooney</string>
+    <string name="jennifer">Jennifer Lawrence</string>
+    <string name="rahul">Rahul Gandhi</string>
+    <string name="tyrion">Tyrion Lannister</string>
+    <string name="sreesanth">S S Sreesanth</string>
+    <string name="muray">Andy Murray</string>
+    <string name="cruise">Tom Cruise</string>
+    <string name="walter">Walter White</string>
+    <string name="bale">Gareth Bale</string>
+
     <string name="people">Personalities</string>
     <string name="shares">Shares</string>
     <string name="credits">Worth Credits</string>
     <string name="tab1">Transaction</string>
     <string name="tab2">Summary</string>
     <string name="title_activity_splash_screen">Splash Screen</string>
+
+    <string name="stockOne">one</string>
+    <string name="stockTwo">two</string>
+    <string name="stockThree">three</string>
+    <string name="stockFour">four</string>
+    <string name="stockFive">five</string>
+    <string name="stockSix">six</string>
+    <string name="stockSeven">seven</string>
+
+
+    <string name="session_one_passcode">0123</string>
+    <string name="session_two_passcode">1234</string>
+
 </resources>

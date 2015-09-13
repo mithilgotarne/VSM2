@@ -99,7 +99,7 @@
                                 android:orientation="vertical">
 
                                 <LinearLayout
-                                    android:id="@+id/arvind"
+                                    android:id="@+id/stockOne"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -108,10 +108,10 @@
                                     android:padding="8dp">
 
                                     <TextView
-                                        android:id="@+id/arvind_textView"
+                                        android:id="@+id/stockOne_textView"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/arvind"
+                                        android:text="@string/stockOne"
                                         android:textAppearance="@android:style/TextAppearance.Medium" />
 
                                     <LinearLayout
@@ -121,7 +121,7 @@
 
 
                                         <TextView
-                                            android:id="@+id/arvindShares"
+                                            android:id="@+id/stockOneShares"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -129,7 +129,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/arvindCredits"
+                                            android:id="@+id/stockOneCredits"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="2"
@@ -137,7 +137,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/arvindRate_textView"
+                                            android:id="@+id/stockOneRate_textView"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Rate: 10" />
@@ -146,13 +146,13 @@
 
 
                                     <LinearLayout
-                                        android:id="@+id/arvindlinearLayout"
+                                        android:id="@+id/stockOnelinearLayout"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:orientation="horizontal">
 
                                         <EditText
-                                            android:id="@+id/arvind_editText"
+                                            android:id="@+id/stockOne_editText"
                                             android:layout_width="72dp"
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center"
@@ -166,7 +166,7 @@
                                             android:textAlignment="center" />
 
                                         <Button
-                                            android:id="@+id/arvindSell_button"
+                                            android:id="@+id/stockOneSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -174,7 +174,7 @@
                                             android:text="Sell" />
 
                                         <Button
-                                            android:id="@+id/arvindBuy_button"
+                                            android:id="@+id/stockOneBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -187,7 +187,7 @@
 
 
                                 <LinearLayout
-                                    android:id="@+id/deepika"
+                                    android:id="@+id/stockTwo"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -196,10 +196,10 @@
                                     android:padding="8dp">
 
                                     <TextView
-                                        android:id="@+id/deepika_textView"
+                                        android:id="@+id/stockTwo_textView"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/deepika"
+                                        android:text="@string/stockTwo"
                                         android:textAppearance="@android:style/TextAppearance.Medium" />
 
                                     <LinearLayout
@@ -209,7 +209,7 @@
 
 
                                         <TextView
-                                            android:id="@+id/deepikaShares"
+                                            android:id="@+id/stockTwoShares"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -217,7 +217,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/deepikaCredits"
+                                            android:id="@+id/stockTwoCredits"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="2"
@@ -225,7 +225,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/deepikaRate_textView"
+                                            android:id="@+id/stockTwoRate_textView"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Rate: 10" />
@@ -234,13 +234,13 @@
 
 
                                     <LinearLayout
-                                        android:id="@+id/deepikalinearLayout"
+                                        android:id="@+id/stockTwolinearLayout"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:orientation="horizontal">
 
                                         <EditText
-                                            android:id="@+id/deepika_editText"
+                                            android:id="@+id/stockTwo_editText"
                                             android:layout_width="72dp"
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center"
@@ -254,7 +254,7 @@
                                             android:textAlignment="center" />
 
                                         <Button
-                                            android:id="@+id/deepikaSell_button"
+                                            android:id="@+id/stockTwoSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -263,7 +263,7 @@
                                             android:text="Sell" />
 
                                         <Button
-                                            android:id="@+id/deepikaBuy_button"
+                                            android:id="@+id/stockTwoBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -273,7 +273,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:id="@+id/rohit"
+                                    android:id="@+id/stockThree"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -282,10 +282,10 @@
                                     android:padding="8dp">
 
                                     <TextView
-                                        android:id="@+id/rohit_textView"
+                                        android:id="@+id/stockThree_textView"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/rohit"
+                                        android:text="@string/stockThree"
                                         android:textAppearance="@android:style/TextAppearance.Medium" />
 
                                     <LinearLayout
@@ -295,7 +295,7 @@
 
 
                                         <TextView
-                                            android:id="@+id/rohitShares"
+                                            android:id="@+id/stockThreeShares"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -303,7 +303,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/rohitCredits"
+                                            android:id="@+id/stockThreeCredits"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="2"
@@ -311,7 +311,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/rohitRate_textView"
+                                            android:id="@+id/stockThreeRate_textView"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Rate: 10" />
@@ -320,13 +320,13 @@
 
 
                                     <LinearLayout
-                                        android:id="@+id/rohitlinearLayout"
+                                        android:id="@+id/stockThreelinearLayout"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:orientation="horizontal">
 
                                         <EditText
-                                            android:id="@+id/rohit_editText"
+                                            android:id="@+id/stockThree_editText"
                                             android:layout_width="72dp"
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center"
@@ -340,7 +340,7 @@
                                             android:textAlignment="center" />
 
                                         <Button
-                                            android:id="@+id/rohitSell_button"
+                                            android:id="@+id/stockThreeSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -349,7 +349,7 @@
                                             android:text="Sell" />
 
                                         <Button
-                                            android:id="@+id/rohitBuy_button"
+                                            android:id="@+id/stockThreeBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -359,7 +359,7 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:id="@+id/salman"
+                                    android:id="@+id/stockFour"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -368,10 +368,10 @@
                                     android:padding="8dp">
 
                                     <TextView
-                                        android:id="@+id/salman_textView"
+                                        android:id="@+id/stockFour_textView"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/salman"
+                                        android:text="@string/stockFour"
                                         android:textAppearance="@android:style/TextAppearance.Medium" />
 
                                     <LinearLayout
@@ -381,7 +381,7 @@
 
 
                                         <TextView
-                                            android:id="@+id/salmanShares"
+                                            android:id="@+id/stockFourShares"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -389,7 +389,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/salmanCredits"
+                                            android:id="@+id/stockFourCredits"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="2"
@@ -397,7 +397,7 @@
                                             android:textAlignment="center" />
 
                                         <TextView
-                                            android:id="@+id/salmanRate_textView"
+                                            android:id="@+id/stockFourRate_textView"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Rate: 10" />
@@ -406,13 +406,13 @@
 
 
                                     <LinearLayout
-                                        android:id="@+id/salmanlinearLayout"
+                                        android:id="@+id/stockFourlinearLayout"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:orientation="horizontal">
 
                                         <EditText
-                                            android:id="@+id/salman_editText"
+                                            android:id="@+id/stockFour_editText"
                                             android:layout_width="72dp"
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center"
@@ -426,7 +426,7 @@
                                             android:textAlignment="center" />
 
                                         <Button
-                                            android:id="@+id/salmanSell_button"
+                                            android:id="@+id/stockFourSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
@@ -435,7 +435,268 @@
                                             android:text="Sell" />
 
                                         <Button
-                                            android:id="@+id/salmanBuy_button"
+                                            android:id="@+id/stockFourBuy_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+
+                                            android:onClick="buy"
+                                            android:text="Buy" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/stockFive"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:background="#EEEEEE"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <TextView
+                                        android:id="@+id/stockFive_textView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/stockFive"
+                                        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+
+                                        <TextView
+                                            android:id="@+id/stockFiveShares"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Shares: 0"
+                                            android:textAlignment="center" />
+
+                                        <TextView
+                                            android:id="@+id/stockFiveCredits"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:text="Credits Worth: 0"
+                                            android:textAlignment="center" />
+
+                                        <TextView
+                                            android:id="@+id/stockFiveRate_textView"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rate: 10" />
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/stockFivelinearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/stockFive_editText"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:background="#ffffff"
+                                            android:ems="10"
+                                            android:hint="Sell/Buy"
+                                            android:inputType="numberDecimal"
+                                            android:maxLength="4"
+                                            android:padding="8dp"
+                                            android:textAlignment="center" />
+
+                                        <Button
+                                            android:id="@+id/stockFiveSell_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+
+                                            android:onClick="sell"
+                                            android:text="Sell" />
+
+                                        <Button
+                                            android:id="@+id/stockFiveBuy_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+
+                                            android:onClick="buy"
+                                            android:text="Buy" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/stockSix"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:background="#EEEEEE"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <TextView
+                                        android:id="@+id/stockSix_textView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/stockSix"
+                                        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+
+                                        <TextView
+                                            android:id="@+id/stockSixShares"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Shares: 0"
+                                            android:textAlignment="center" />
+
+                                        <TextView
+                                            android:id="@+id/stockSixCredits"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:text="Credits Worth: 0"
+                                            android:textAlignment="center" />
+
+                                        <TextView
+                                            android:id="@+id/stockSixRate_textView"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rate: 10" />
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/stockSixlinearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/stockSix_editText"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:background="#ffffff"
+                                            android:ems="10"
+                                            android:hint="Sell/Buy"
+                                            android:inputType="numberDecimal"
+                                            android:maxLength="4"
+                                            android:padding="8dp"
+                                            android:textAlignment="center" />
+
+                                        <Button
+                                            android:id="@+id/stockSixSell_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+
+                                            android:onClick="sell"
+                                            android:text="Sell" />
+
+                                        <Button
+                                            android:id="@+id/stockSixBuy_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+
+                                            android:onClick="buy"
+                                            android:text="Buy" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/stockSeven"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:background="#EEEEEE"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <TextView
+                                        android:id="@+id/stockSeven_textView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/stockSeven"
+                                        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+
+                                        <TextView
+                                            android:id="@+id/stockSevenShares"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Shares: 0"
+                                            android:textAlignment="center" />
+
+                                        <TextView
+                                            android:id="@+id/stockSevenCredits"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2"
+                                            android:text="Credits Worth: 0"
+                                            android:textAlignment="center" />
+
+                                        <TextView
+                                            android:id="@+id/stockSevenRate_textView"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rate: 10" />
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/stockSevenlinearLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/stockSeven_editText"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="1"
+                                            android:background="#ffffff"
+                                            android:ems="10"
+                                            android:hint="Sell/Buy"
+                                            android:inputType="numberDecimal"
+                                            android:maxLength="4"
+                                            android:padding="8dp"
+                                            android:textAlignment="center" />
+
+                                        <Button
+                                            android:id="@+id/stockSevenSell_button"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+
+                                            android:onClick="sell"
+                                            android:text="Sell" />
+
+                                        <Button
+                                            android:id="@+id/stockSevenBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"

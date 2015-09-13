@@ -21,29 +21,50 @@ import java.util.List;
 
 public class VSM extends TabActivity {
 
-    Share arvind,deepika,rohit,salman;
-    int asRate,dsRate,rssRate,ssRate;
-    int credits, round, profit;
+    ArrayList<Stock> stocks;
+    int credits, round, profit, session;
     List<String> roundList = new ArrayList<String>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vsm);
-
         TabHost tabHost = getTabHost();
         this.setNewTab(this, tabHost, "tab1", R.string.tab1, R.id.tab1);
         this.setNewTab(this, tabHost, "tab2", R.string.tab2, R.id.tab2);
-
+        stocks = new ArrayList<Stock>();
         credits=5000;
         profit = 0;
         round = 0;
-        newRate();
-        arvind=new Share(getApplicationContext(),(TextView)findViewById(R.id.arvindShares),(TextView)findViewById(R.id.arvindRate_textView),(TextView)findViewById(R.id.arvindCredits),asRate);
-        deepika=new Share(getApplicationContext(),(TextView)findViewById(R.id.deepikaShares),(TextView)findViewById(R.id.deepikaRate_textView),(TextView)findViewById(R.id.deepikaCredits),dsRate);
-        rohit = new Share(getApplicationContext(),(TextView)findViewById(R.id.rohitShares),(TextView)findViewById(R.id.rohitRate_textView),(TextView)findViewById(R.id.rohitCredits),rssRate);
-        salman=new Share(getApplicationContext(),(TextView) findViewById(R.id.salmanShares),(TextView)findViewById(R.id.salmanRate_textView),(TextView)findViewById(R.id.salmanCredits),ssRate);
+        getInitialDialog();
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockOneShares), (TextView) findViewById(R.id.stockOneRate_textView), (TextView) findViewById(R.id.stockOneCredits)));
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockTwoShares), (TextView) findViewById(R.id.stockTwoRate_textView), (TextView) findViewById(R.id.stockTwoCredits)));
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockThreeShares), (TextView) findViewById(R.id.stockThreeRate_textView), (TextView) findViewById(R.id.stockThreeCredits)));
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockFourShares), (TextView) findViewById(R.id.stockFourRate_textView), (TextView) findViewById(R.id.stockFourCredits)));
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockFiveShares), (TextView) findViewById(R.id.stockFiveRate_textView), (TextView) findViewById(R.id.stockFiveCredits)));
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockSixShares), (TextView) findViewById(R.id.stockSixRate_textView), (TextView) findViewById(R.id.stockSixCredits)));
+        stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockSevenShares), (TextView) findViewById(R.id.stockSevenRate_textView), (TextView) findViewById(R.id.stockSevenCredits)));
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+
+    private void initialize(int session) {
+        if (session == 1) {
+            stocks.get(0).setName(getString(R.string.rohit), (TextView) findViewById(R.id.stockOne_textView));
+            stocks.get(1).setName(getString(R.string.novak), (TextView) findViewById(R.id.stockTwo_textView));
+            stocks.get(2).setName(getString(R.string.rooney), (TextView) findViewById(R.id.stockThree_textView));
+            stocks.get(3).setName(getString(R.string.salman), (TextView) findViewById(R.id.stockFour_textView));
+            stocks.get(4).setName(getString(R.string.jennifer), (TextView) findViewById(R.id.stockFive_textView));
+            stocks.get(5).setName(getString(R.string.rahul), (TextView) findViewById(R.id.stockSix_textView));
+            stocks.get(6).setName(getString(R.string.tyrion), (TextView) findViewById(R.id.stockSeven_textView));
+
+        } else {
+            stocks.get(0).setName(getString(R.string.sreesanth), (TextView) findViewById(R.id.stockOne_textView));
+            stocks.get(1).setName(getString(R.string.muray), (TextView) findViewById(R.id.stockTwo_textView));
+            stocks.get(2).setName(getString(R.string.bale), (TextView) findViewById(R.id.stockThree_textView));
+            stocks.get(3).setName(getString(R.string.deepika), (TextView) findViewById(R.id.stockFour_textView));
+            stocks.get(4).setName(getString(R.string.cruise), (TextView) findViewById(R.id.stockFive_textView));
+            stocks.get(5).setName(getString(R.string.arvind), (TextView) findViewById(R.id.stockSix_textView));
+            stocks.get(6).setName(getString(R.string.walter), (TextView) findViewById(R.id.stockSeven_textView));
+        }
     }
 
     private void setNewTab(Context context, TabHost tabHost, String tag, int title, int contentID ){
@@ -64,22 +85,35 @@ public class VSM extends TabActivity {
         EditText e;
         switch (v.getId()){
 
-            case R.id.arvindBuy_button:
-                e = (EditText)findViewById(R.id.arvind_editText);
-                credits -= arvind.buyShare(e, credits);
+            case R.id.stockOneBuy_button:
+                e = (EditText) findViewById(R.id.stockOne_editText);
+                credits -= stocks.get(0).buyShare(e, credits);
                 break;
-            case R.id.deepikaBuy_button:
-                e = (EditText)findViewById(R.id.deepika_editText);
-                credits -= deepika.buyShare(e, credits);
+            case R.id.stockTwoBuy_button:
+                e = (EditText) findViewById(R.id.stockTwo_editText);
+                credits -= stocks.get(1).buyShare(e, credits);
                 break;
-            case R.id.rohitBuy_button:
-                e = (EditText)findViewById(R.id.rohit_editText);
-                credits -= rohit.buyShare(e, credits);
+            case R.id.stockThreeBuy_button:
+                e = (EditText) findViewById(R.id.stockThree_editText);
+                credits -= stocks.get(2).buyShare(e, credits);
                 break;
-            case R.id.salmanBuy_button:
-                e = (EditText)findViewById(R.id.salman_editText);
-                credits -= salman.buyShare(e, credits);
+            case R.id.stockFourBuy_button:
+                e = (EditText) findViewById(R.id.stockFour_editText);
+                credits -= stocks.get(3).buyShare(e, credits);
                 break;
+            case R.id.stockFiveBuy_button:
+                e = (EditText) findViewById(R.id.stockFive_editText);
+                credits -= stocks.get(4).buyShare(e, credits);
+                break;
+            case R.id.stockSixBuy_button:
+                e = (EditText) findViewById(R.id.stockSix_editText);
+                credits -= stocks.get(5).buyShare(e, credits);
+                break;
+            case R.id.stockSevenBuy_button:
+                e = (EditText) findViewById(R.id.stockSeven_editText);
+                credits -= stocks.get(6).buyShare(e, credits);
+                break;
+
 
         }
         TextView creditsView = (TextView)findViewById(R.id.availableCredits_textView);
@@ -88,22 +122,35 @@ public class VSM extends TabActivity {
     public void sell(View v){
         EditText e;
         switch (v.getId()){
-            case R.id.arvindSell_button:
-                e = (EditText)findViewById(R.id.arvind_editText);
-                credits+=arvind.sellShare(e);
+            case R.id.stockOneSell_button:
+                e = (EditText) findViewById(R.id.stockOne_editText);
+                credits += stocks.get(0).sellShare(e);
                 break;
-            case R.id.deepikaSell_button:
-                e = (EditText)findViewById(R.id.deepika_editText);
-                credits+=deepika.sellShare(e);
+            case R.id.stockTwoSell_button:
+                e = (EditText) findViewById(R.id.stockTwo_editText);
+                credits += stocks.get(1).sellShare(e);
                 break;
-            case R.id.rohitSell_button:
-                e = (EditText)findViewById(R.id.rohit_editText);
-                credits+=rohit.sellShare(e);
+            case R.id.stockThreeSell_button:
+                e = (EditText) findViewById(R.id.stockThree_editText);
+                credits += stocks.get(2).sellShare(e);
                 break;
-            case R.id.salmanSell_button:
-                e = (EditText)findViewById(R.id.salman_editText);
-                credits+=salman.sellShare(e);
+            case R.id.stockFourSell_button:
+                e = (EditText) findViewById(R.id.stockFour_editText);
+                credits += stocks.get(3).sellShare(e);
                 break;
+            case R.id.stockFiveSell_button:
+                e = (EditText) findViewById(R.id.stockFive_editText);
+                credits += stocks.get(4).sellShare(e);
+                break;
+            case R.id.stockSixSell_button:
+                e = (EditText) findViewById(R.id.stockSix_editText);
+                credits += stocks.get(5).sellShare(e);
+                break;
+            case R.id.stockSevenSell_button:
+                e = (EditText) findViewById(R.id.stockSeven_editText);
+                credits += stocks.get(6).sellShare(e);
+                break;
+
         }
         TextView creditsView = (TextView)findViewById(R.id.availableCredits_textView);
         creditsView.setText("Credits: " + credits);
@@ -146,6 +193,50 @@ public class VSM extends TabActivity {
         alertD.show();
     }
 
+    protected void getInitialDialog() {
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+
+        View promptView = layoutInflater.inflate(R.layout.passcode, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // set prompts.xml to be the layout file of the alertdialog builder
+        alertDialogBuilder.setView(promptView);
+
+        final EditText input = (EditText) promptView.findViewById(R.id.inputPasscode);
+
+        // setup a dialog window
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        String passcode = input.getText().toString();
+                        if (passcode.equals("")) {
+                            Toaster("Enter paascode!");
+                            getInitialDialog();
+                        } else if (passcode.equals(getString(R.string.session_one_passcode))) {
+                            session = 1;
+                            initialize(session);
+                            newRate();
+                            dialog.cancel();
+                        } else if (passcode.equals(getString(R.string.session_two_passcode))) {
+                            session = 2;
+                            initialize(session);
+                            newRate();
+                            dialog.cancel();
+                        } else {
+                            Toaster("Sorry! Wrong passcode.");
+                            getInitialDialog();
+                        }
+                    }
+                });
+
+        // create an alert dialog
+        AlertDialog alertD = alertDialogBuilder.create();
+
+        alertD.show();
+    }
+
     private void Toaster(String string) {
         final Toast toast = Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT);
         toast.show();
@@ -159,9 +250,9 @@ public class VSM extends TabActivity {
     }
 
     public void transact(View v){
-        int profit = arvind.credits + deepika.credits + rohit.credits + salman.credits;
+        int profit = creditsWorth();
         newRate();
-        profit = arvind.credits + deepika.credits + rohit.credits + salman.credits - profit;
+        profit = creditsWorth() - profit;
         getDialog();
         if (round > 0) {
             roundList.add("Round: " + (round - 1) + " Profit: " + profit);
@@ -174,41 +265,32 @@ public class VSM extends TabActivity {
 
     }
 
+    private int creditsWorth() {
+        int sum = 0;
+        for (Stock s : stocks)
+            sum += s.credits;
+        return sum;
+    }
+
     private void newRate() {
         this.round++;
         switch (round){
             case 1:
-                asRate=10;
-                dsRate=10;
-                rssRate=10;
-                ssRate=10;
+                for (Stock s : stocks) {
+                    s.setRate();
+                    s.displayNewRate();
+                }
                 TextView round = (TextView) findViewById(R.id.round_textView);
                 round.setText("Round: " + this.round);
                 break;
             case 2:
-                arvind.setRate(25);
-                deepika.setRate(90);
-                rohit.setRate(20);
-                salman.setRate(70);
-                break;
             case 3:
-                arvind.setRate(50);
-                deepika.setRate(45);
-                rohit.setRate(40);
-                salman.setRate(35);
-                break;
             case 4:
-                arvind.setRate();
-                deepika.setRate();
-                rohit.setRate();
-                salman.setRate();
-                break;
             case 5:
-                arvind.setRate();
-                deepika.setRate();
-                rohit.setRate();
-                salman.setRate();
+                for (Stock s : stocks)
+                    s.setRate();
                 break;
+
         }
 
     }
@@ -216,10 +298,8 @@ public class VSM extends TabActivity {
     private void displayAllNewRate() {
         TextView round = (TextView) findViewById(R.id.round_textView);
         round.setText("Round: " + this.round);
-        arvind.displayNewRate();
-        deepika.displayNewRate();
-        rohit.displayNewRate();
-        salman.displayNewRate();
+        for (Stock s : stocks)
+            s.displayNewRate();
     }
     @Override
     public void onBackPressed(){
