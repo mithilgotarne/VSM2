@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".VSM"
-            android:label="@string/title_activity_vsm" >
+            android:label="@string/title_activity_vsm">
         </activity>
 
     </application>
