@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         View promptView = layoutInflater.inflate(R.layout.startup_passcode, null);
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
 
         // set prompts.xml to be the layout file of the alertdialog builder
         alertDialogBuilder.setView(promptView);

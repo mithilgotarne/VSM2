@@ -24,8 +24,8 @@
     <string name="people">Personalities</string>
     <string name="shares">Shares</string>
     <string name="credits">Worth Credits</string>
-    <string name="tab1">Transaction</string>
-    <string name="tab2">Summary</string>
+    <string name="tab1">TRANSACTION</string>
+    <string name="tab2">SUMMARY</string>
     <string name="title_activity_splash_screen">Splash Screen</string>
 
     <string name="stockOne">one</string>

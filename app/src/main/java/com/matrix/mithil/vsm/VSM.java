@@ -9,21 +9,18 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class VSM extends TabActivity {
 
     ArrayList<Stock> stocks;
-    int credits, round, profit, session;
-    List<String> roundList = new ArrayList<String>();
+    Round setRound;
+    int credits, round, profit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +32,7 @@ public class VSM extends TabActivity {
         credits=5000;
         profit = 0;
         round = 0;
+        setRound = new Round(this);
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockOneShares), (TextView) findViewById(R.id.stockOneRate_textView), (TextView) findViewById(R.id.stockOneCredits)));
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockTwoShares), (TextView) findViewById(R.id.stockTwoRate_textView), (TextView) findViewById(R.id.stockTwoCredits)));
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockThreeShares), (TextView) findViewById(R.id.stockThreeRate_textView), (TextView) findViewById(R.id.stockThreeCredits)));
@@ -212,24 +210,23 @@ public class VSM extends TabActivity {
     }
 
     public void transact(View v){
-        int profit = creditsWorth();
+        int profit = getEvaluation();
         newRate();
-        profit = creditsWorth() - profit;
+        profit = getEvaluation() - profit;
         getDialog(profit);
         if (round > 0) {
-            if (profit < 0)
-                roundList.add("Round: " + (round - 1) + " Loss: " + Math.abs(profit));
-            else
-                roundList.add("Round: " + (round - 1) + " Profit: " + profit);
-
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roundList);
-            ListView roundListView = (ListView) findViewById(R.id.roundList);
-            roundListView.setAdapter(adapter);
+            setRound.update(round - 1, getHoldings(), getEvaluation(), profit);
         }
-
     }
 
-    private int creditsWorth() {
+    private int getHoldings() {
+        int sum = 0;
+        for (Stock s : stocks)
+            sum += s.shares;
+        return sum;
+    }
+
+    private int getEvaluation() {
         int sum = 0;
         for (Stock s : stocks)
             sum += s.credits;

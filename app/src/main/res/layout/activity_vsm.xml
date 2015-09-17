@@ -47,7 +47,7 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content" />
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -730,12 +730,214 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ListView
-                        android:id="@+id/roundList"
+                    <ScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
-                    </ListView>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:id="@+id/round1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/round1_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/round1_holdings"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round1_evaluation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round1_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/round2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/round2_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/round2_holdings"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round2_evaluation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round2_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/round3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/round3_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/round3_holdings"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round3_evaluation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round3_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/round4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/round4_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/round4_holdings"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round4_evaluation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/round4_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/round5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/round5_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textAppearance="@android:style/TextAppearance.Medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/round5_holdings"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent" />
+
+                                    <TextView
+                                        android:id="@+id/round5_evaluation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent" />
+
+                                    <TextView
+                                        android:id="@+id/round5_profit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </ScrollView>
                 </LinearLayout>
 
             </FrameLayout>
