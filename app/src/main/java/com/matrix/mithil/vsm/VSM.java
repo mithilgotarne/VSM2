@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -28,9 +27,6 @@ public class VSM extends TabActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_vsm);
         TabHost tabHost = getTabHost();
         this.setNewTab(this, tabHost, "tab1", R.string.tab1, R.id.tab1);
@@ -39,7 +35,6 @@ public class VSM extends TabActivity {
         credits=5000;
         profit = 0;
         round = 0;
-        getInitialDialog();
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockOneShares), (TextView) findViewById(R.id.stockOneRate_textView), (TextView) findViewById(R.id.stockOneCredits)));
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockTwoShares), (TextView) findViewById(R.id.stockTwoRate_textView), (TextView) findViewById(R.id.stockTwoCredits)));
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockThreeShares), (TextView) findViewById(R.id.stockThreeRate_textView), (TextView) findViewById(R.id.stockThreeCredits)));
@@ -47,6 +42,8 @@ public class VSM extends TabActivity {
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockFiveShares), (TextView) findViewById(R.id.stockFiveRate_textView), (TextView) findViewById(R.id.stockFiveCredits)));
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockSixShares), (TextView) findViewById(R.id.stockSixRate_textView), (TextView) findViewById(R.id.stockSixCredits)));
         stocks.add(new Stock(getApplicationContext(), (TextView) findViewById(R.id.stockSevenShares), (TextView) findViewById(R.id.stockSevenRate_textView), (TextView) findViewById(R.id.stockSevenCredits)));
+        initialize(MainActivity.session);
+        newRate();
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
@@ -160,7 +157,7 @@ public class VSM extends TabActivity {
         creditsView.setText("Credits: " + credits);
     }
 
-    protected void getDialog() {
+    protected void getDialog(final int evaluation) {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
 
         View promptView = layoutInflater.inflate(R.layout.passcode, null);
@@ -171,73 +168,34 @@ public class VSM extends TabActivity {
         alertDialogBuilder.setView(promptView);
 
         final EditText input = (EditText) promptView.findViewById(R.id.inputPasscode);
-
+        final TextView summary = (TextView) promptView.findViewById(R.id.summary);
+        summary.setText("Summary of Round: " + (round - 1));
+        final TextView profit = (TextView) promptView.findViewById(R.id.profit);
+        if (evaluation < 0)
+            profit.setText("Loss: " + Math.abs(evaluation));
+        else
+            profit.setText("Profit: " + evaluation);
         // setup a dialog window
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         String passcode = input.getText().toString();
                         if (passcode.equals("")) {
                             Toaster("Enter paascode!");
-                            getDialog();
+                            getDialog(evaluation);
                         } else if (passcode.equals("1234")) {
                             displayAllNewRate();
                             dialog.cancel();
                         } else {
                             Toaster("Sorry! Wrong passcode.");
-                            getDialog();
+                            getDialog(evaluation);
                         }
                     }
                 });
 
         // create an alert dialog
         AlertDialog alertD = alertDialogBuilder.create();
-
-        alertD.show();
-    }
-
-    protected void getInitialDialog() {
-        LayoutInflater layoutInflater = LayoutInflater.from(this);
-
-        View promptView = layoutInflater.inflate(R.layout.passcode, null);
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
-        // set prompts.xml to be the layout file of the alertdialog builder
-        alertDialogBuilder.setView(promptView);
-
-        final EditText input = (EditText) promptView.findViewById(R.id.inputPasscode);
-
-        // setup a dialog window
-        alertDialogBuilder
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        String passcode = input.getText().toString();
-                        if (passcode.equals("")) {
-                            Toaster("Enter paascode!");
-                            getInitialDialog();
-                        } else if (passcode.equals(getString(R.string.session_one_passcode))) {
-                            session = 1;
-                            initialize(session);
-                            newRate();
-                            dialog.cancel();
-                        } else if (passcode.equals(getString(R.string.session_two_passcode))) {
-                            session = 2;
-                            initialize(session);
-                            newRate();
-                            dialog.cancel();
-                        } else {
-                            Toaster("Sorry! Wrong passcode.");
-                            getInitialDialog();
-                        }
-                    }
-                });
-
-        // create an alert dialog
-        AlertDialog alertD = alertDialogBuilder.create();
-
         alertD.show();
     }
 
@@ -257,10 +215,12 @@ public class VSM extends TabActivity {
         int profit = creditsWorth();
         newRate();
         profit = creditsWorth() - profit;
-        getDialog();
+        getDialog(profit);
         if (round > 0) {
-            roundList.add("Round: " + (round - 1) + " Profit: " + profit);
-            Toast.makeText(getApplicationContext(), "Round: " + (round - 1) + " Profit: " + profit, Toast.LENGTH_SHORT).show();
+            if (profit < 0)
+                roundList.add("Round: " + (round - 1) + " Loss: " + Math.abs(profit));
+            else
+                roundList.add("Round: " + (round - 1) + " Profit: " + profit);
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roundList);
             ListView roundListView = (ListView) findViewById(R.id.roundList);

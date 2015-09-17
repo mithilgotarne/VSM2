@@ -7,7 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#212121"
+        android:background="@color/primary"
+        android:contextClickable="false"
         android:orientation="horizontal"
         android:padding="8dp">
 
@@ -24,10 +25,12 @@
 
         <Button
             android:id="@+id/button"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="transact"
-            android:text="Next Round" />
+            android:text="Next Round"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 
@@ -103,7 +106,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
@@ -191,7 +194,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
@@ -277,7 +280,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
@@ -363,7 +366,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
@@ -445,12 +448,21 @@
                                     </LinearLayout>
                                 </LinearLayout>
 
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:background="#C5CAE9"
+                                    android:gravity="center"
+                                    android:text="Your Ad Here!"
+                                    android:textSize="36sp" />
+
                                 <LinearLayout
                                     android:id="@+id/stockFive"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
@@ -537,7 +549,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
@@ -624,7 +636,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
-                                    android:background="#EEEEEE"
+                                    android:background="@color/primary_light"
                                     android:orientation="vertical"
                                     android:padding="8dp">
 
