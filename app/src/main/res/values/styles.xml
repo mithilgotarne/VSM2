@@ -2,6 +2,7 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorButtonNormal">@color/accent</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>

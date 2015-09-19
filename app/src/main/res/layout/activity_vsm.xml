@@ -27,6 +27,7 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
             android:onClick="transact"
             android:text="Next Round"
             android:textColor="#ffffff" />
@@ -171,17 +172,23 @@
                                             android:id="@+id/stockOneSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
                                             android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockOneBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
                                             android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
 
 
@@ -259,18 +266,24 @@
                                             android:id="@+id/stockTwoSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockTwoBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
                                             android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -345,18 +358,24 @@
                                             android:id="@+id/stockThreeSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockThreeBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
                                             android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -431,19 +450,25 @@
                                             android:id="@+id/stockFourSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockFourBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -527,19 +552,25 @@
                                             android:id="@+id/stockFiveSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockFiveBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -614,19 +645,25 @@
                                             android:id="@+id/stockSixSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockSixBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -701,19 +738,25 @@
                                             android:id="@+id/stockSevenSell_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="sell"
-                                            android:text="Sell" />
+                                            android:text="Sell"
+                                            android:textColor="#ffffff" />
 
                                         <Button
                                             android:id="@+id/stockSevenBuy_button"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1"
+                                            android:layout_marginLeft="4dp"
 
+                                            android:layout_weight="1"
+                                            android:background="@drawable/custom_button"
                                             android:onClick="buy"
-                                            android:text="Buy" />
+                                            android:text="Buy"
+                                            android:textColor="#ffffff" />
                                     </LinearLayout>
                                 </LinearLayout>
 
