@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class VSM extends TabActivity {
 
-    ArrayList<Stock> stocks;
+    public ArrayList<Stock> stocks;
     Round setRound;
     int credits, round, profit;
     @Override
@@ -180,7 +180,7 @@ public class VSM extends TabActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         String passcode = input.getText().toString();
                         if (passcode.equals("")) {
-                            Toaster("Enter paascode!");
+                            Toaster("Enter passcode!");
                             getDialog(evaluation);
                         } else if (passcode.equals("1234")) {
                             displayAllNewRate();
