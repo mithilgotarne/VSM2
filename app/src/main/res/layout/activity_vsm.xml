@@ -472,15 +472,6 @@
                                     </LinearLayout>
                                 </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="4dp"
-                                    android:background="#C5CAE9"
-                                    android:gravity="center"
-                                    android:text="Your Ad Here!"
-                                    android:textSize="36sp" />
-
                                 <LinearLayout
                                     android:id="@+id/stockFive"
                                     android:layout_width="match_parent"
@@ -962,17 +953,20 @@
                                     <TextView
                                         android:id="@+id/round5_holdings"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent" />
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
 
                                     <TextView
                                         android:id="@+id/round5_evaluation"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent" />
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
 
                                     <TextView
                                         android:id="@+id/round5_profit"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent" />
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
 
                                 </LinearLayout>
                             </LinearLayout>

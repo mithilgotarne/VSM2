@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.TabActivity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -161,7 +162,9 @@ public class VSM extends TabActivity {
         View promptView = layoutInflater.inflate(R.layout.passcode, null);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
+        if (Build.VERSION.SDK_INT < 11) {
+            alertDialogBuilder.setInverseBackgroundForced(true);
+        }
         // set prompts.xml to be the layout file of the alertdialog builder
         alertDialogBuilder.setView(promptView);
 

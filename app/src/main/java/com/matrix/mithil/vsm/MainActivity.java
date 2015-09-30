@@ -3,11 +3,14 @@ package com.matrix.mithil.vsm;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         i = new Intent(MainActivity.this, VSM.class);
@@ -49,12 +56,15 @@ public class MainActivity extends AppCompatActivity {
 
         View promptView = layoutInflater.inflate(R.layout.startup_passcode, null);
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set prompts.xml to be the layout file of the alertdialog builder
         alertDialogBuilder.setView(promptView);
 
         final EditText input = (EditText) promptView.findViewById(R.id.inputPasscode);
+        if (Build.VERSION.SDK_INT < 11) {
+            alertDialogBuilder.setInverseBackgroundForced(true);
+        }
 
         // setup a dialog window
         alertDialogBuilder
@@ -76,7 +86,11 @@ public class MainActivity extends AppCompatActivity {
                             getInitialDialog();
                         }
                     }
-                });
+                }).setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                finish();
+            }
+        });
 
         // create an alert dialog
         AlertDialog alertD = alertDialogBuilder.create();

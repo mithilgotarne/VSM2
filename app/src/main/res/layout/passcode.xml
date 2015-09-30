@@ -23,6 +23,7 @@
         android:id="@+id/inputPasscode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
         android:ems="8"
         android:gravity="center"
         android:hint="Enter Passcode"
