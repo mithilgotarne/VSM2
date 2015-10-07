@@ -3,6 +3,7 @@ package com.matrix.mithil.vsm;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    final static String PREFS = "myPrefs";
     public static int session;
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 3000;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public Intent i;
+    int flag;
+    SharedPreferences sharedPreferences;
 
     public MainActivity() {
 
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences(PREFS, 0);
+        flag = sharedPreferences.getInt("startup", 0);
         i = new Intent(MainActivity.this, VSM.class);
 
         new Handler().postDelayed(new Runnable() {
@@ -44,8 +50,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                getInitialDialog();
+                if (flag == 0)
+                    getInitialDialog();
                 // close this activity
+                else
+                    startActivity(i);
             }
         }, SPLASH_TIME_OUT);
 
@@ -77,8 +86,10 @@ public class MainActivity extends AppCompatActivity {
                             getInitialDialog();
                         } else if (passcode.equals(getString(R.string.session_one_passcode))) {
                             session = 1;
+                            flag = 1;
                             startActivity(i);
                         } else if (passcode.equals(getString(R.string.session_two_passcode))) {
+                            flag = 1;
                             session = 2;
                             startActivity(i);
                         } else {
@@ -110,4 +121,11 @@ public class MainActivity extends AppCompatActivity {
         }, 500);
     }
 
+    @Override
+    protected void onPause() {
+        SharedPreferences.Editor e = sharedPreferences.edit();
+        e.putInt("startup", flag);
+        e.apply();
+        super.onPause();
+    }
 }

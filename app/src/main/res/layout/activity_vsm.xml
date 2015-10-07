@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
             android:onClick="transact"
-            android:text="Next Round"
+            android:text="Lock"
             android:textColor="#ffffff" />
 
     </LinearLayout>
@@ -764,6 +764,7 @@
                     android:layout_height="match_parent">
 
                     <ScrollView
+                        android:id="@+id/roundListView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 

@@ -9,14 +9,19 @@ import android.widget.TextView;
  */
 public class Round extends VSM {
     public Activity activity;
+    public int number, holdings, evaluation, profit;
 
-    public Round(Activity activity) {
+    public Round(Activity activity, int x, int h, int e, int p) {
+        number = x;
+        holdings = h;
+        evaluation = e;
+        profit = p;
         this.activity = activity;
     }
 
-    public void update(int x, int holdings, int evaluation, int profit) {
+    public void update() {
         LinearLayout linearLayout;
-        switch (x) {
+        switch (number) {
             case 1:
                 linearLayout = (LinearLayout) this.activity.findViewById(R.id.round1);
                 linearLayout.setBackgroundColor(this.activity.getApplicationContext().getResources().getColor(R.color.primary_light));
