@@ -30,6 +30,9 @@ public class VSM extends TabActivity {
     DatabaseHandler db;
     Round setRound;
     int credits, round, profit, dialogFlag, redFlag;
+
+    String redPass[] = {"89595", "79746", "51818", "58264", "34245"};
+    String profPass[] = {"65896", "15616", "29656", "25766", "62689"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +47,12 @@ public class VSM extends TabActivity {
         roundsList = new ArrayList<Round>();
         credits = sharedPreferences.getInt("credits", INITIAL_CREDITS);
         profit = sharedPreferences.getInt("profit", 0);
-        ;
         round = sharedPreferences.getInt("round", 1);
+        if (round == 7) {
+            round = 1;
+            editor.clear();
+            editor.commit();
+        }
         dialogFlag = sharedPreferences.getInt("flag", 0);
         redFlag = sharedPreferences.getInt("redFlag", 0);
         round--;
@@ -62,13 +69,13 @@ public class VSM extends TabActivity {
 
     @Override
     public void onPause() {
-        if (round < 6) {
+        if (round < 6 || redFlag == 1 || dialogFlag == 1) {
             editor.putInt("round", round);
             editor.putInt("credits", credits);
             editor.putInt("profit", profit);
             editor.putInt("flag", dialogFlag);
             editor.putInt("redFlag", redFlag);
-            editor.apply();
+            editor.commit();
             for (Stock s : stocks)
                 db.updateStock(s);
         }
@@ -83,16 +90,15 @@ public class VSM extends TabActivity {
             for (Stock s : stocks)
                 db.addStock(s);
         }
-        if (session == 1) {
             stocks.get(0).setName(getString(R.string.rohit), (TextView) findViewById(R.id.stockOne_textView));
             stocks.get(1).setName(getString(R.string.novak), (TextView) findViewById(R.id.stockTwo_textView));
-            stocks.get(2).setName(getString(R.string.rooney), (TextView) findViewById(R.id.stockThree_textView));
-            stocks.get(3).setName(getString(R.string.salman), (TextView) findViewById(R.id.stockFour_textView));
-            stocks.get(4).setName("Miley Cirus", (TextView) findViewById(R.id.stockFive_textView));
+        stocks.get(2).setName("Miley Cyrus", (TextView) findViewById(R.id.stockThree_textView));
+        stocks.get(3).setName(getString(R.string.rooney), (TextView) findViewById(R.id.stockFour_textView));
+        stocks.get(4).setName(getString(R.string.salman), (TextView) findViewById(R.id.stockFive_textView));
             stocks.get(5).setName(getString(R.string.rahul), (TextView) findViewById(R.id.stockSix_textView));
             stocks.get(6).setName(getString(R.string.tyrion), (TextView) findViewById(R.id.stockSeven_textView));
 
-        } else {
+            /*
             stocks.get(0).setName(getString(R.string.sreesanth), (TextView) findViewById(R.id.stockOne_textView));
             stocks.get(1).setName(getString(R.string.muray), (TextView) findViewById(R.id.stockTwo_textView));
             stocks.get(2).setName("Luis Suarez", (TextView) findViewById(R.id.stockThree_textView));
@@ -100,7 +106,8 @@ public class VSM extends TabActivity {
             stocks.get(4).setName(getString(R.string.jennifer), (TextView) findViewById(R.id.stockFive_textView));
             stocks.get(5).setName(getString(R.string.arvind), (TextView) findViewById(R.id.stockSix_textView));
             stocks.get(6).setName(getString(R.string.walter), (TextView) findViewById(R.id.stockSeven_textView));
-        }
+            */
+
         stocks = db.getAllStocks(stocks);
         if (redFlag == 1) {
             getRed(profit);
@@ -215,6 +222,7 @@ public class VSM extends TabActivity {
         if (Build.VERSION.SDK_INT < 11) {
             alertDialogBuilder.setInverseBackgroundForced(true);
         }
+
         // set prompts.xml to be the layout file of the alertdialog builder
         alertDialogBuilder.setView(promptView);
 
@@ -235,7 +243,7 @@ public class VSM extends TabActivity {
                         if (passcode.equals("")) {
                             Toaster("Enter passcode!");
                             getDialog(evaluation);
-                        } else if (passcode.equals("1234")) {
+                        } else if (passcode.equals(profPass[round - 2])) {
                             dialogFlag = 0;
                             displayAllNewRate();
                             dialog.cancel();
@@ -275,26 +283,26 @@ public class VSM extends TabActivity {
     }
 
     private int getHoldings() {
-        int sum = 0;
-        for (Stock s : stocks)
-            sum += s.shares;
+        int sum = profit;
+        for (Round r : roundsList)
+            sum += r.profit;
         return sum;
     }
 
     private int getEvaluation() {
-        int sum = 0;
+        int sum = credits;
         for (Stock s : stocks)
             sum += s.credits;
         return sum;
     }
 
     private void newRate() {
-        int rate[][] = {{10, 20, 30, 40, 50, 60, 70},
-                {60, 80, 90, 100, 50, 40, 30},
-                {20, 30, 90, 50, 60, 10, 20},
-                {50, 40, 70, 80, 90, 70, 10},
-                {20, 30, 90, 50, 60, 10, 20},
-                {50, 40, 70, 80, 90, 70, 10},
+        int rate[][] = {{60, 100, 75, 120, 130, 55, 80},
+                {70, 120, 100, 150, 110, 75, 70},
+                {50, 130, 120, 110, 90, 50, 110},
+                {80, 120, 130, 120, 80, 100, 95},
+                {90, 140, 135, 140, 130, 0, 115},
+                {100, 170, 105, 110, 100, 0, 140},
         };
         this.round++;
         for (int i = 0; i < stocks.size(); i++) {
@@ -312,7 +320,6 @@ public class VSM extends TabActivity {
     public void onBackPressed(){
         Toast.makeText(getApplicationContext(), "Sorry! Cannot go back at this step", Toast.LENGTH_SHORT).show();
     }
-
     protected void getLastDialog(final int eval, final int p) {
         dialogFlag = 1;
         LayoutInflater layoutInflater = LayoutInflater.from(this);
@@ -351,14 +358,13 @@ public class VSM extends TabActivity {
                         if (passcode.equals("")) {
                             Toaster("Enter passcode!");
                             getLastDialog(eval, p);
-                        } else if (passcode.equals("1234")) {
+                        } else if (passcode.equals(profPass[4])) {
                             dialogFlag = 0;
-                            db.delete();
-                            editor.clear();
+                            editor.putInt("grand", eval - INITIAL_CREDITS);
                             editor.commit();
-                            Intent i = new Intent(VSM.this, MainActivity.class);
+                            Intent i = new Intent(VSM.this, End.class);
                             startActivity(i);
-                            dialog.cancel();
+                            finish();
                         } else {
                             Toaster("Sorry! Wrong passcode.");
                             getLastDialog(eval, p);
@@ -387,13 +393,14 @@ public class VSM extends TabActivity {
         final EditText input = (EditText) promptView.findViewById(R.id.inputPasscode);
         // setup a dialog window
         alertDialogBuilder
+                .setCancelable(false)
                 .setPositiveButton("Next Round", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         String passcode = input.getText().toString();
                         if (passcode.equals("")) {
                             Toaster("Enter passcode!");
                             getRed(evaluation);
-                        } else if (passcode.equals("1234")) {
+                        } else if (passcode.equals(redPass[round - 2])) {
                             redFlag = 0;
                             if (round == 6)
                                 getLastDialog(getEvaluation(), evaluation);

@@ -17,6 +17,7 @@
         android:layout_alignParentRight="false"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
+        android:background="#F44336"
         android:ellipsize="end"
         android:ems="8"
         android:gravity="center"

@@ -23,7 +23,10 @@
             android:label="@string/title_activity_vsm"
             android:screenOrientation="portrait">
         </activity>
-
+        <activity
+            android:name=".End"
+            android:label="@string/title_activity_end"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

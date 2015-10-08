@@ -21,10 +21,6 @@ public class MainActivity extends AppCompatActivity {
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 3000;
 
-    static {
-        session = 0;
-    }
-
     public Intent i;
     int flag;
     SharedPreferences sharedPreferences;
@@ -45,13 +41,18 @@ public class MainActivity extends AppCompatActivity {
         flag = sharedPreferences.getInt("startup", 0);
         i = new Intent(MainActivity.this, VSM.class);
 
+        final Boolean end = sharedPreferences.getBoolean("end", false);
+
         new Handler().postDelayed(new Runnable() {
 
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                if (flag == 0)
-                    getInitialDialog();
+                if (end) {
+                    Intent intent = new Intent(MainActivity.this, End.class);
+                    startActivity(intent);
+                } else if (flag == 0)
+                    getTerms();
                 // close this activity
                 else
                     startActivity(i);
@@ -85,19 +86,42 @@ public class MainActivity extends AppCompatActivity {
                             Toaster("Enter paascode!");
                             getInitialDialog();
                         } else if (passcode.equals(getString(R.string.session_one_passcode))) {
-                            session = 1;
                             flag = 1;
-                            startActivity(i);
-                        } else if (passcode.equals(getString(R.string.session_two_passcode))) {
-                            flag = 1;
-                            session = 2;
                             startActivity(i);
                         } else {
                             Toaster("Sorry! Wrong passcode.");
                             getInitialDialog();
                         }
                     }
-                }).setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                });
+
+        // create an alert dialog
+        AlertDialog alertD = alertDialogBuilder.create();
+
+        alertD.show();
+    }
+
+    protected void getTerms() {
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+
+        View promptView = layoutInflater.inflate(R.layout.terms, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // set prompts.xml to be the layout file of the alertdialog builder
+        alertDialogBuilder.setView(promptView);
+        if (Build.VERSION.SDK_INT < 11) {
+            alertDialogBuilder.setInverseBackgroundForced(true);
+        }
+
+        // setup a dialog window
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("Agree", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        getInitialDialog();
+                    }
+                }).setNeutralButton("Disagree", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 finish();
             }
@@ -108,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
         alertD.show();
     }
+
 
     private void Toaster(String string) {
         final Toast toast = Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT);
