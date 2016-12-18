@@ -31,8 +31,10 @@ public class VSM extends TabActivity {
     Round setRound;
     int credits, round, profit, dialogFlag, redFlag;
 
-    String redPass[] = {"89595", "79746", "51818", "58264", "34245"};
-    String profPass[] = {"65896", "15616", "29656", "25766", "62689"};
+    String redPass[] = {"0", "0", "0", "0", "0"};
+    String profPass[] = {"0", "0", "0", "0", "0"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,7 @@ public class VSM extends TabActivity {
             round = 1;
             editor.clear();
             editor.commit();
+            editor.apply();
         }
         dialogFlag = sharedPreferences.getInt("flag", 0);
         redFlag = sharedPreferences.getInt("redFlag", 0);
@@ -76,6 +79,7 @@ public class VSM extends TabActivity {
             editor.putInt("flag", dialogFlag);
             editor.putInt("redFlag", redFlag);
             editor.commit();
+            editor.apply();
             for (Stock s : stocks)
                 db.updateStock(s);
         }
@@ -90,15 +94,6 @@ public class VSM extends TabActivity {
             for (Stock s : stocks)
                 db.addStock(s);
         }
-            stocks.get(0).setName(getString(R.string.rohit), (TextView) findViewById(R.id.stockOne_textView));
-            stocks.get(1).setName(getString(R.string.novak), (TextView) findViewById(R.id.stockTwo_textView));
-        stocks.get(2).setName("Miley Cyrus", (TextView) findViewById(R.id.stockThree_textView));
-        stocks.get(3).setName(getString(R.string.rooney), (TextView) findViewById(R.id.stockFour_textView));
-        stocks.get(4).setName(getString(R.string.salman), (TextView) findViewById(R.id.stockFive_textView));
-            stocks.get(5).setName(getString(R.string.rahul), (TextView) findViewById(R.id.stockSix_textView));
-            stocks.get(6).setName(getString(R.string.tyrion), (TextView) findViewById(R.id.stockSeven_textView));
-
-            /*
             stocks.get(0).setName(getString(R.string.sreesanth), (TextView) findViewById(R.id.stockOne_textView));
             stocks.get(1).setName(getString(R.string.muray), (TextView) findViewById(R.id.stockTwo_textView));
             stocks.get(2).setName("Luis Suarez", (TextView) findViewById(R.id.stockThree_textView));
@@ -106,7 +101,6 @@ public class VSM extends TabActivity {
             stocks.get(4).setName(getString(R.string.jennifer), (TextView) findViewById(R.id.stockFive_textView));
             stocks.get(5).setName(getString(R.string.arvind), (TextView) findViewById(R.id.stockSix_textView));
             stocks.get(6).setName(getString(R.string.walter), (TextView) findViewById(R.id.stockSeven_textView));
-            */
 
         stocks = db.getAllStocks(stocks);
         if (redFlag == 1) {
@@ -297,12 +291,12 @@ public class VSM extends TabActivity {
     }
 
     private void newRate() {
-        int rate[][] = {{60, 100, 75, 120, 130, 55, 80},
-                {70, 120, 100, 150, 110, 75, 70},
-                {50, 130, 120, 110, 90, 50, 110},
-                {80, 120, 130, 120, 80, 100, 95},
-                {90, 140, 135, 140, 130, 0, 115},
-                {100, 170, 105, 110, 100, 0, 140},
+        int rate[][] = {{80, 80, 90, 60, 70, 60, 100},
+                {100, 70, 120, 50, 100, 80, 80},
+                {120, 100, 90, 65, 90, 70, 70},
+                {0, 140, 130, 80, 70, 110, 90},
+                {0, 150, 120, 90, 120, 60, 120},
+                {0, 120, 160, 80, 80, 100, 80},
         };
         this.round++;
         for (int i = 0; i < stocks.size(); i++) {
@@ -332,6 +326,21 @@ public class VSM extends TabActivity {
         }
         // set prompts.xml to be the layout file of the alertdialog builder
         alertDialogBuilder.setView(promptView);
+
+        TextView t1 = (TextView) promptView.findViewById(R.id.t1);
+        t1.setText(stocks.get(0).name+"\t\t"+"Rate: "+stocks.get(0).rate);
+        TextView t2 = (TextView) promptView.findViewById(R.id.t2);
+        t2.setText(stocks.get(1).name+"\t\t"+"Rate: "+stocks.get(1).rate);
+        TextView t3 = (TextView) promptView.findViewById(R.id.t3);
+        t3.setText(stocks.get(2).name+"\t\t"+"Rate: "+stocks.get(2).rate);
+        TextView t4 = (TextView) promptView.findViewById(R.id.t4);
+        t4.setText(stocks.get(3).name+"\t\t"+"Rate: "+stocks.get(3).rate);
+        TextView t5 = (TextView) promptView.findViewById(R.id.t5);
+        t5.setText(stocks.get(4).name+"\t\t"+"Rate: "+stocks.get(4).rate);
+        TextView t6 = (TextView) promptView.findViewById(R.id.t6);
+        t6.setText(stocks.get(5).name+"\t\t"+"Rate: "+stocks.get(5).rate);
+        TextView t7 = (TextView) promptView.findViewById(R.id.t7);
+        t7.setText(stocks.get(6).name+"\t\t"+"Rate: "+stocks.get(6).rate);
 
         final EditText input = (EditText) promptView.findViewById(R.id.inputPasscode);
         final TextView summary = (TextView) promptView.findViewById(R.id.summary);

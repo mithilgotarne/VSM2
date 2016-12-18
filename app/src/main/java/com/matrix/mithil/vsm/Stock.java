@@ -12,6 +12,7 @@ import java.util.Random;
  */
 public class Stock extends VSM {
     static int idTrack = 0;
+    public String name;
     public int id, shares, rate, credits;
     TextView s, r, c, t;  //shares,rate,credits;
     Context context;
@@ -29,6 +30,7 @@ public class Stock extends VSM {
 
     public void setName(String name, TextView t) {
         this.t = t;
+        this.name = name;
         t.setText(name);
     }
 

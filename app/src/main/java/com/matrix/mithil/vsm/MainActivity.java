@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         if (passcode.equals("")) {
                             Toaster("Enter paascode!");
                             getInitialDialog();
-                        } else if (passcode.equals(getString(R.string.session_one_passcode))) {
+                        } else if (passcode.equals("0000")) {
                             flag = 1;
                             startActivity(i);
                         } else {
@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         SharedPreferences.Editor e = sharedPreferences.edit();
         e.putInt("startup", flag);
+        e.commit();
         e.apply();
         super.onPause();
     }
